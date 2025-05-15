@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yummy</title>
+    <link rel="icon" href="./images/logo.png" type="image/png" />
+
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- custom css -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body class="bg-black">
+    <!-- search section -->
+
+    <!-- home section -->
+    <section id="home" class="d-none">
+      <div class="container">
+        <div class="row my-5 g-3"></div>
+      </div>
+    </section>
+
+    <section id="search" class="d-none">
+      <div class="container w-75">
+        <div class="row mt-5">
+          <div class="col-sm-12 col-md-6">
+            <div class="mb-3">
+              <input
+                id="searchName"
+                type="text"
+                class="form-control bg-transparent text-white"
+                placeholder="Search By Name"
+              />
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="mb-3">
+              <input
+                maxlength="1"
+                id="searchLetter"
+                type="text"
+                class="form-control bg-transparent text-white"
+                placeholder="Search By Frist Letter"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5 g-3 rowData"></div>
+      </div>
+    </section>
+
+    <!-- category -->
+    <section id="Category" class="d-none">
+      <div class="container">
+        <div class="row my-5 g-3"></div>
+      </div>
+    </section>
+
+    <!-- category items -->
+    <section id="category-items" class="d-none">
+      <div class="container">
+        <div class="row my-5 g-3"></div>
+      </div>
+    </section>
+
+    <!-- Area -->
+    <section id="area" class="d-none">
+      <div class="container">
+        <div class="row mt-5 g-3"></div>
+      </div>
+    </section>
+    <a href="" target="_blank"></a>
+
+    <!-- Area items -->
+    <section id="area-items" class="d-none">
+      <div class="container">
+        <div class="row mt-5 g-3"></div>
+      </div>
+    </section>
+
+    <!-- show ingrediant -->
+    <section id="ingrediant" class="d-none">
+      <div class="container">
+        <div class="row mt-5 g-3"></div>
+      </div>
+    </section>
+    <!-- show ingrediant items -->
+    <section id="ingrediant-items" class="d-none">
+      <div class="container">
+        <div class="row mt-5 g-3"></div>
+      </div>
+    </section>
+
+    <!-- item -->
+    <section id="item" class="text-white my-5 d-none">
+      <div class="container">
+        <div class="row"></div>
+      </div>
+    </section>
+
+    <!-- section contact us -->
+    <section id="contact" class="d-none">
+      <div class="container">
+        <div
+          class="contant vh-100 d-flex justify-content-center align-items-center"
+        >
+          <div class="row w-75 g-3">
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Name"
+                  type="text"
+                  class="form-control"
+                  oninput="validation(this , 'mesName')"
+                  placeholder="Enter your Name"
+                />
+              </div>
+              <p
+                id="mesName"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Special characters and numbers not allowed
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Email"
+                  type="text"
+                  class="form-control"
+                  oninput="validation(this , 'mesEmail')"
+                  placeholder="Enter your Email"
+                />
+              </div>
+              <p
+                id="mesEmail"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Email not valid *exemple@yyy.zzz
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Phone"
+                  type="text"
+                  class="form-control"
+                  oninput="validation(this , 'mesPhone')"
+                  placeholder="Enter your Phone"
+                />
+              </div>
+              <p
+                id="mesPhone"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Enter valid Phone Number
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Age"
+                  type="number"
+                  class="form-control"
+                  oninput="validation(this , 'mesAge')"
+                  placeholder="Enter your Age"
+                />
+              </div>
+              <p
+                id="mesAge"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Enter valid age
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Password"
+                  type="password"
+                  class="form-control"
+                  oninput="validation(this , 'mesPassword')"
+                  placeholder="Enter your Password"
+                />
+              </div>
+              <p
+                id="mesPassword"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Enter valid password *Minimum eight characters, at least one
+                letter and one number:*
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="">
+                <input
+                  id="Repassword"
+                  type="password"
+                  class="form-control"
+                  placeholder="Repassword"
+                />
+              </div>
+              <p
+                id="mesRepassword"
+                class="text-white text-center p-3 bg-danger rounded-3 mt-2 d-none"
+              >
+                Enter valid repassword
+              </p>
+            </div>
+            <div class="col-sm-12 text-center">
+              <button
+                id="send"
+                class="btn btn-danger bg-transparent text-danger text-capitalize"
+                disabled
+              >
+                submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- slide nav -->
+    <div class="side-nav-menu z-3 min-vh-100 position-fixed d-flex top-0">
+      <div
+        class="nav-tab d-flex flex-column justify-content-between min-vh-100 bg-black p-4"
+      >
+        <div class="links text-white">
+          <ul
+            class="list-unstyled overflow-hidden position-relative"
+            id="navList"
+          >
+            <li
+              onclick="showSection('search')"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Search
+            </li>
+            <li
+              onclick="showSection('Category')"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Categories
+            </li>
+            <li
+              onclick="showSection('area')"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Area
+            </li>
+            <li
+              onclick="showSection('ingrediant')"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Ingredients
+            </li>
+            <li
+              onclick="showSection('contact')"
+              class="py-2 position-relative cursor-pointer"
+            >
+              Contact Us
+            </li>
+          </ul>
+        </div>
+        <div class="nav-footer text-white">
+          <div class="icons">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <div class="footer">
+            <p>Copyright © 2019 All Rights <br />Reserved.</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="nav-header d-flex flex-column justify-content-between py-4 text-center px-2 bg-white text-black"
+      >
+        <img
+          class="logo"
+          src="./images/logo.png"
+          style="width: 40px"
+          alt=""
+          srcset=""
+        />
+        <div class="open-close-icon">
+          <i class="fa-solid fa-align-justify fa-2x open_icon"></i>
+          <i
+            class="fa-solid fa-xmark fa-align-justify fa-2x close_icon d-none"
+          ></i>
+        </div>
+        <div>
+          <i class="fa-solid fa-globe d-block"></i>
+          <i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- loader -->
+    <div
+      id="loader"
+      class="loading position-fixed bottom-0 start-0 end-0 d-flex justify-content-center align-items-center d-none"
+    >
+      <span class="loader"></span>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
